@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SplashCharacterAnimeController
+  m_Controller: {fileID: 9100000, guid: 607777cd479004cba8acd95a278f863d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 6cb1a64b078444cd3952b5029fc11bc8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6a6023f215a5c41e1bbed37a5ec31c06, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b6892cdfcacee4a77876ae672b7954de, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: add20d1bd1f5f4aa580cc43ccb963ed1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fc5292f14074c418a8fd5fbe9aafc290, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 070dca064c25d419c86796333845fecb, type: 2}
