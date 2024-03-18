@@ -55,6 +55,10 @@ public class GridManager : MonoBehaviour
             Tile pos = character.GetComponent<CharacterController>()._pos;
             character.transform.position = this.transform.position +
                                            new Vector3(_xSpace / 2 + _xSpace * pos.Y, -_ySpace / 2 - _ySpace * pos.X);
+            Vector3 scale = character.transform.localScale;
+            // 적대 캐릭터 방향 전환
+            scale.x = -Mathf.Abs(scale.x);
+            character.transform.localScale = scale;
         }
     }
 
