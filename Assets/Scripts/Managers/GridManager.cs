@@ -57,7 +57,7 @@ public class GridManager : MonoBehaviour
                                            new Vector3(_xSpace / 2 + _xSpace * pos.Y, -_ySpace / 2 - _ySpace * pos.X);
             Vector3 scale = character.transform.localScale;
             // 적대 캐릭터 방향 전환
-            scale.x = -Mathf.Abs(scale.x);
+            scale.x = Mathf.Abs(scale.x);
             character.transform.localScale = scale;
         }
     }
