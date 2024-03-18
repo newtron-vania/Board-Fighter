@@ -22,7 +22,7 @@ namespace Datas
         public List<Character> myCharacter;
         public List<Character> enemyCharacter;
         
-        // DTO를 
+        // DTO를 MapData로 변환 
         public MapData DtoToMap()
         {
             MapData map = new MapData()
@@ -51,7 +51,7 @@ namespace Datas
             return twoDimArray;
         }
     }
-    // Dictionary<mapid, mapDataDTo 변환
+    // Dictionary<mapid, mapDataDTO> 변환
     public class MapDTODict : ILoader<int, MapDataDTO>
     {
         public List<MapDataDTO> mapdatadtos = new List<MapDataDTO>();

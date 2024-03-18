@@ -27,6 +27,9 @@ public class CharacterController : MonoBehaviour
 
     private void Start()
     {
+        /*
+         * 해당 프리팹에 있는 전략별 컴포넌트를 호출하여 저장한다.
+         */
         _moveType = GetComponent<MoveType>();
         _attackType = GetComponent<AttackType>();
         _attackType.Damage = GetComponent<Stat>().Damage;
@@ -59,9 +62,9 @@ public class CharacterController : MonoBehaviour
         
     }
 
-    /* 캐릭터 이동 함수
+    /* 
+     * 캐릭터 이동 함수
      * 이동 가능한 좌표가 있을 시 이동 실시
-     * 
      */
     public bool Move(List<CharacterController> targets)
     {

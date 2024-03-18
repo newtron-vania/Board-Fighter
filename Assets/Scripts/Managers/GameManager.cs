@@ -118,7 +118,6 @@ public class GameManager
             ui.gameObject.SetActive(true);
             GamePause();
         }
-
     }
 
     public Define.WorldObject GetWorldObjectType(GameObject go)
