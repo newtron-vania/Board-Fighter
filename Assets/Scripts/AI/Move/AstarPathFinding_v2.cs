@@ -45,15 +45,23 @@ public class AstarPathFinding : PathFinding
      * h = 목표 좌표와 현재 좌표까지의 남은 이동거리
      * f = g + h
     */
+    /*
+         * Astar Alrogithm
+         * g = 해당 경로까지의 최단 이동 횟수
+         * h = 목표 좌표와 현재 좌표까지의 남은 이동거리
+         * f = g + h
+         */
     private List<Tile> FindPath(Tile startNode, Tile targetNode, Tile[,] grid, bool ignoreObstacle = false)
     {
-        List<Tile> openSet = new List<Tile>();
-        List<Tile> closedSet = new List<Tile>();
-        
+        List<Tile> openSet = new List<Tile>();    // 탐색 대기 노드
+        List<Tile> closedSet = new List<Tile>();  // 탐색 완료 노드
+
         openSet.Add(startNode);
+
 
         while (openSet.Count > 0)
         {
+            // 우선 순위 노드 탐색
             Tile currentTile = openSet[0];
             for (int i = 1; i < openSet.Count; i++)
             {
@@ -67,12 +75,13 @@ public class AstarPathFinding : PathFinding
             openSet.Remove(currentTile);
             closedSet.Add(currentTile);
 
-
+            // 목적지 탐색 시 백트래킹(최단경로) 반환
             if (currentTile == targetNode)
             {
                 return RetracePath(startNode, currentTile);
             }
 
+            // 탐색 대기 노드 추가
             foreach (Tile neighbor in GetNeighbors(currentTile, grid))
             {
                 if (closedSet.Contains(neighbor))
@@ -82,13 +91,13 @@ public class AstarPathFinding : PathFinding
                 // 장애물 무시여부에 따라 이동가능여부 확인
                 if (neighbor.hasObstacle)
                 {
-                    if(!ignoreObstacle)
+                    if (!ignoreObstacle)
                         continue;
                 }
 
+                // 비용 계산
                 int newCostToNeighbor = currentTile.gCost + (neighbor - currentTile);
-                
-                
+
                 if (newCostToNeighbor < neighbor.gCost || !openSet.Contains(neighbor))
                 {
                     neighbor.gCost = newCostToNeighbor;
@@ -103,10 +112,9 @@ public class AstarPathFinding : PathFinding
             }
         }
 
-
         return null;
     }
-    
+
     // 최단경로 백트래킹
     private List<Tile> RetracePath(Tile startNode, Tile endNode)
     {
