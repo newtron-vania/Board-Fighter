@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class EightPos : AttackStyle
 {
-
-
     public override bool IsInRange(Tile start, List<CharacterController> enemies, out List<CharacterController> targets)
     {
         List<Tile> neighbors = FindEightDir(start, GameManager.Instance().GetMap);

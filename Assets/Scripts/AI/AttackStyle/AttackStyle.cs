@@ -8,7 +8,6 @@ public abstract class AttackStyle : MonoBehaviour
     [SerializeField]
     private int _range = 0;
     
-    
     public int Range
     {
         get { return _range; }
